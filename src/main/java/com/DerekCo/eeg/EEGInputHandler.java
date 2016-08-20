@@ -1,3 +1,5 @@
+// Listens to the EEG and returns a CSV String.
+
 // This entire class was basically cribbed from the Arduino Playground article
 // on interactions with Java:
 // http://playground.arduino.cc/Interfacing/Java
@@ -15,6 +17,7 @@ import java.util.Enumeration;
 
 public class EEGInputHandler implements SerialPortEventListener {
 	SerialPort serialPort;
+    FileOutputter outputter = new FileOutputter();
 	
 	/** The port we're normally going to use. */
 	private static final String PORT_NAMES[] = { 
@@ -37,9 +40,10 @@ public class EEGInputHandler implements SerialPortEventListener {
 	private static final int DATA_RATE = 9600;
 
 	public void initialize() {
-                // the next line is for Raspberry Pi and 
-                // gets us into the while loop and was suggested here http://www.raspberrypi.org/phpBB3/viewtopic.php?f=81&t=32186
-              //  System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/ttyACM0");
+
+        // the next line is for Raspberry Pi and
+        // gets us into the while loop and was suggested here http://www.raspberrypi.org/phpBB3/viewtopic.php?f=81&t=32186
+        //  System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/ttyACM0");
 
 		CommPortIdentifier portId = null;
 		Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
@@ -94,13 +98,14 @@ public class EEGInputHandler implements SerialPortEventListener {
 	}
 
 	/**
-	 * Handle an event on the serial port. Read the data and print it.
+	 * Handle an event on the serial port. Read the data and return it.
 	 */
 	public synchronized void serialEvent(SerialPortEvent oEvent) {
 		if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
 			try {
 				String inputLine=input.readLine();
 				System.out.println(inputLine);
+                outputter.append(inputLine);
 			} catch (Exception e) {
 				System.err.println(e.toString());
 			}
