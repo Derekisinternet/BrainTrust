@@ -1,10 +1,10 @@
 package com.DerekCo.eeg;
 
-import junit.Test;
+import org.junit.runner.JUnitCore;
 
 
 public class EEGInputHandlerTest {
-	@Test
+	//@Test
 	
 	public static void testInput(){}
 
