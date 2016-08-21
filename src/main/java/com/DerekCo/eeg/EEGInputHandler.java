@@ -12,7 +12,10 @@ import java.io.OutputStream;
 import gnu.io.CommPortIdentifier; 
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent; 
-import gnu.io.SerialPortEventListener; 
+import gnu.io.SerialPortEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Enumeration;
 
 public class EEGInputHandler implements SerialPortEventListener {
@@ -104,8 +107,11 @@ public class EEGInputHandler implements SerialPortEventListener {
 		if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
 			try {
 				String inputLine=input.readLine();
-				System.out.println(inputLine);
-                outputter.append(inputLine);
+                //add a timestamp to the beginning of the line:
+                String timeStamp = new SimpleDateFormat("HH:mm:ss:SS").format(new Date()) + ",";
+                String mutatedLine = timeStamp + inputLine;
+				System.out.println(mutatedLine);
+                outputter.append(mutatedLine);
 			} catch (Exception e) {
 				System.err.println(e.toString());
 			}
