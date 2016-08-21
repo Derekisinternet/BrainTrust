@@ -50,6 +50,10 @@ public class EEGRow {
         return this.timeStamp;
     }
 
+    int getSignal_strength(){
+        return this.signal_strength;
+    }
+
     int getAttention() {
         return this.attention;
     }
