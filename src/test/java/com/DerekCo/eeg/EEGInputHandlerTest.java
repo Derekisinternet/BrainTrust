@@ -1,11 +1,11 @@
 package com.DerekCo.eeg;
 
-import org.junit.runner.JUnitCore;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 
 public class EEGInputHandlerTest {
-	//@Test
-	
-	public static void testInput(){}
+	@Test
+	public void testInput(){}
 
 }

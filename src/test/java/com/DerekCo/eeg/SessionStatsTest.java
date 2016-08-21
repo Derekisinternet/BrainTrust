@@ -1,6 +1,9 @@
 package com.DerekCo.eeg;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import java.io.*;
 /**
@@ -8,11 +11,19 @@ import java.io.*;
  */
 public class SessionStatsTest {
 
+    private SessionStats stats;
+    private File file;
+
+    @Before
+    public void setup() {
+        //input file with 59 rows of data
+        file = new File("src/test/java/com/DerekCo/eeg/eeg_sample.csv");
+        stats = new SessionStats(file);
+    }
+
+
     @Test
     public  void createsEEGArray() {
-        File file = new File("src/test/java/com/DerekCo/eeg/eeg_sample.csv");
-
-        SessionStats stats = new SessionStats(file);
         assertEquals(59, stats.rawData.size());
     }
 }
