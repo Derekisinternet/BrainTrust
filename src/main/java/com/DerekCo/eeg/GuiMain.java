@@ -37,6 +37,7 @@ public class GuiMain {
                 }
                 //start the EEG stream
                 input = new EEGInputHandler();
+                input.addObserver(rawData);
                 input.initialize();
 
                 startButton.setText("Pause Session");

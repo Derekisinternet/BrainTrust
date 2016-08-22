@@ -17,10 +17,16 @@ import gnu.io.SerialPortEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+import java.util.Observable;
+import java.util.Observer;
 
-public class EEGInputHandler implements SerialPortEventListener {
+public class EEGInputHandler extends Observable implements SerialPortEventListener{
 	SerialPort serialPort;
     FileOutputter outputter = new FileOutputter();
+	private String message;
 	
 	/** The port we're normally going to use. */
 	private static final String PORT_NAMES[] = { 
@@ -43,9 +49,13 @@ public class EEGInputHandler implements SerialPortEventListener {
 	private static final int DATA_RATE = 9600;
 
 	public void initialize() {
+		//list of objects to notify when a new message comes in:
+//		observers = new ArrayList<Observer>();
 
-        // the next line is for Raspberry Pi and
-        // gets us into the while loop and was suggested here http://www.raspberrypi.org/phpBB3/viewtopic.php?f=81&t=32186
+        /**
+		 * this next line is for Raspberry Pi and gets us into the while loop.
+		 *  It was suggested here: http://www.raspberrypi.org/phpBB3/viewtopic.php?f=81&t=32186
+		 */
         //  System.setProperty("gnu.io.rxtx.SerialPorts", "/dev/ttyACM0");
 
 		CommPortIdentifier portId = null;
@@ -109,13 +119,19 @@ public class EEGInputHandler implements SerialPortEventListener {
 				String inputLine=input.readLine();
                 //add a timestamp to the beginning of the line:
                 String timeStamp = new SimpleDateFormat("HH:mm:ss:SS").format(new Date()) + ",";
-                String mutatedLine = timeStamp + inputLine;
-				System.out.println(mutatedLine);
-                outputter.append(mutatedLine);
+
+                message = timeStamp + inputLine;
+				setChanged();
+				notifyObservers();
+				System.out.println(message);
 			} catch (Exception e) {
 				System.err.println(e.toString());
 			}
 		}
 		// Ignore all the other eventTypes, but you should consider the other ones.
+	}
+
+	String getMessage() {
+		return message;
 	}
 }

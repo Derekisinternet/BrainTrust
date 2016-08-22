@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57b9b89-a7b1-41e8-9617-a24726129a34" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_math3_3_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMainToolbar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/App.class" afterPath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/EEGRow.class" afterPath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/EEGRow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/SessionStats.class" afterPath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/SessionStats.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/DerekCo/eeg/SessionStatsTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/DerekCo/eeg/SessionStatsTest.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/DerekCo/eeg/EEGInputHandlerTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/EEGInputHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/EEGInputHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/RawDataWindow.class" afterPath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/RawDataWindow.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrainTrust.iml" afterPath="$PROJECT_DIR$/BrainTrust.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGRow.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGRow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/SessionStats.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/SessionStats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/SessionStatsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/SessionStatsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java" />
     </list>
     <ignored path="BrainTrust.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,6 +30,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="EEGRowTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGRowTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/App.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,13 +52,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuiMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GuiMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+            <state relative-caret-position="180">
+              <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EEGInputHandlerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="47" column="5" selection-start-line="40" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EEGInputHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4091#4092#0" expanded="true" />
+                <element signature="e#4112#4113#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +93,8 @@
       <file leaf-file-name="RawDataWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,20 +132,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/FileOutputer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGUnit.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/FileIngestor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/FileOutputter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGRowAggregator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGSession.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGRowTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGRow.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMainToolbar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/SessionStats.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/SessionStatsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/Observer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/ObservableSubject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java" />
       </list>
     </option>
   </component>
@@ -291,58 +325,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="EEGRowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.DerekCo.eeg.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="BrainTrust" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.DerekCo.eeg" />
-      <option name="MAIN_CLASS_NAME" value="com.DerekCo.eeg.EEGRowTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="EEGRowTest.testCreation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.DerekCo.eeg.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="BrainTrust" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.DerekCo.eeg" />
-      <option name="MAIN_CLASS_NAME" value="com.DerekCo.eeg.EEGRowTest" />
-      <option name="METHOD_NAME" value="testCreation" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="SessionStatsTest.createsEEGArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -356,6 +338,58 @@
       <option name="PACKAGE_NAME" value="com.DerekCo.eeg" />
       <option name="MAIN_CLASS_NAME" value="com.DerekCo.eeg.SessionStatsTest" />
       <option name="METHOD_NAME" value="createsEEGArray" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="EEGInputHandlerTest.testObserverList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.DerekCo.eeg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="BrainTrust" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.DerekCo.eeg" />
+      <option name="MAIN_CLASS_NAME" value="com.DerekCo.eeg.EEGInputHandlerTest" />
+      <option name="METHOD_NAME" value="testObserverList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="EEGInputHandlerTest.testNotifyUpdatesObservers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.DerekCo.eeg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="BrainTrust" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.DerekCo.eeg" />
+      <option name="MAIN_CLASS_NAME" value="com.DerekCo.eeg.EEGInputHandlerTest" />
+      <option name="METHOD_NAME" value="testNotifyUpdatesObservers" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -616,17 +650,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.App" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All in BrainTrust" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.EEGRowTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.EEGRowTest.testCreation" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SessionStatsTest.createsEEGArray" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SessionStatsTest.createsEEGArray" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.EEGInputHandlerTest.testObserverList" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.EEGInputHandlerTest.testNotifyUpdatesObservers" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.App" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in BrainTrust" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SessionStatsTest.createsEEGArray" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.EEGRowTest.testCreation" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.EEGRowTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.EEGInputHandlerTest.testNotifyUpdatesObservers" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EEGInputHandlerTest.testObserverList" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.All in BrainTrust" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SessionStatsTest.createsEEGArray" />
       </list>
     </recent_temporary>
   </component>
@@ -647,40 +681,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 44m 40s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 20h 38m 22s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 44m 52s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 20h 39m 36s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 45m 02s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 20h 40m 14s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 49m 45s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 20h 40m 31s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 52m 03s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 21h 10m 36s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 53m 27s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 21h 28m 12s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 54m 37s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 21h 29m 10s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 22h 58m 36s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 21h 30m 19s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.20 at 23h 35m 49s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testNotifyUpdatesObservers - 2016.08.21 at 21h 31m 11s.xml">
+      <configuration name="EEGInputHandlerTest.testNotifyUpdatesObservers" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_BrainTrust - 2016.08.21 at 17h 15m 03s.xml">
-      <configuration name="All in BrainTrust" configurationId="JUnit" />
+    <history-entry file="EEGInputHandlerTest_testObserverList - 2016.08.21 at 20h 33m 58s.xml">
+      <configuration name="EEGInputHandlerTest.testObserverList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1763" y="-308" width="1781" height="1055" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -691,7 +725,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32870865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28966522" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28922093" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23116733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -754,7 +788,7 @@
         <state relative-caret-position="105">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -791,8 +825,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#3802#0" expanded="false" />
-            <element signature="imports" expanded="false" />
+            <element signature="e#0#4115#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,40 +867,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/SessionStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="33" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/SessionStatsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="32" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGRowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -897,18 +901,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGRowTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="91" column="7" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/SessionStatsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/ObservableSubject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="47" column="5" selection-start-line="40" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -917,10 +949,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        <state relative-caret-position="180">
+          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/RawDataWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGInputHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4091#4092#0" expanded="true" />
+            <element signature="e#4112#4113#0" expanded="true" />
           </folding>
         </state>
       </provider>
