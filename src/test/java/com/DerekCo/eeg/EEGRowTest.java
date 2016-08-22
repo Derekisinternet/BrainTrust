@@ -11,7 +11,7 @@ public class EEGRowTest {
     public void testCreation(){
         String row = "16:55:25:791,200,0,0,86919,48488,6439,25507,12768,4335,2645,3233\n";
         System.out.println(row.split(","));
-        EEGRow object = new EEGRow(row.trim());
+        EEGReading object = new EEGReading(row.trim());
         assertEquals(200, object.getSignal_strength());
     }
 }

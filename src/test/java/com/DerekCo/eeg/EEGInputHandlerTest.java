@@ -32,7 +32,6 @@ public class EEGInputHandlerTest {
 
 	@Test
 	public void testObserverList(){
-		//instantiate an object that implements Observer:
 		MockObserver observer = new MockObserver();
 		handler.addObserver(observer);
 		assertEquals(1, handler.countObservers());

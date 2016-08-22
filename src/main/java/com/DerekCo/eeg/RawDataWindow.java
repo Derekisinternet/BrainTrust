@@ -17,14 +17,14 @@ public class RawDataWindow implements Observer {
 
     public RawDataWindow() {
         frame = new JFrame();
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300,600);
+        //dimensions: (width, height)
+        frame.setSize(580,530);
         frame.setVisible(true);
 
         panel = new JPanel();
         frame.getContentPane().add(BorderLayout.CENTER,panel);
 
-        text = new JTextArea(10, 20);
+        text = new JTextArea(30, 48);
         text.setLineWrap(true);
         scroller = new JScrollPane(text);
         panel.add(scroller);
@@ -32,8 +32,8 @@ public class RawDataWindow implements Observer {
 
     public void update(Observable observable, Object arg) {
         inputs = (EEGInputHandler) observable;
-        String newline = inputs.getMessage();
-        text.append(newline);
+        String line = inputs.getMessage() + "\n";
+        text.append(line);
 
     }
 }

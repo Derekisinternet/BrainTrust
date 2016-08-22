@@ -3,7 +3,6 @@ package com.DerekCo.eeg;
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
-import org.apache.commons.math3.stat.StatUtils;
 
 
 /**
@@ -11,7 +10,7 @@ import org.apache.commons.math3.stat.StatUtils;
  * Ingests a bunch of EEG Rows and does stats operations on them.
  */
 public class SessionStats {
-    List<EEGRow> rawData = new ArrayList<EEGRow>();
+    List<EEGReading> rawData = new ArrayList<EEGReading>();
 
     public SessionStats(File filename) {
         try {
@@ -20,7 +19,7 @@ public class SessionStats {
             String line = null;
 
             while ((line = reader.readLine()) != null) {
-                EEGRow row = new EEGRow(line);
+                EEGReading row = new EEGReading(line);
                 rawData.add(row);
             }
         } catch(Exception except){

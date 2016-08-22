@@ -13,20 +13,23 @@ public class GuiMain {
     JFrame frame;
     EEGInputHandler input;
     RawDataWindow rawData;
+    Visualizer visualizer;
 
-    public void go() {
+    public GuiMain() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300,300);
-        frame.setVisible(true);
 
         startButton = new JButton("Start Session");
-        startButton.addActionListener(new StartButtonListener());
-        endButton = new JButton("End Session");
-        endButton.addActionListener(new EndButtonListener());
         frame.getContentPane().add(BorderLayout.NORTH, startButton);
-//        frame.getContentPane().add(BorderLayout.WEST, endButton);
+        startButton.addActionListener(new StartButtonListener());
 
+        visualizer = new Visualizer();
+        frame.getContentPane().add(BorderLayout.CENTER, visualizer);
+
+        // Always have this as the last operation. Otherwise,
+        // things after it won't be visible.
+        frame.setVisible(true);
     }
 
     class StartButtonListener implements ActionListener {
@@ -38,6 +41,7 @@ public class GuiMain {
                 //start the EEG stream
                 input = new EEGInputHandler();
                 input.addObserver(rawData);
+                input.addObserver(visualizer);
                 input.initialize();
 
                 startButton.setText("Pause Session");

@@ -20,13 +20,13 @@ package com.DerekCo.eeg;
  * 10) low gamma (31-40Hz) multi-sensory procsessing
  * 11) high gamma (41-50Hz)
  */
-public class EEGRow {
+public class EEGReading {
 
     String timeStamp;
     private int signal_strength, attention, meditation, delta, theta, low_alpha, high_alpha,
         low_beta, high_beta, low_gamma, high_gamma;
 
-    public EEGRow(String row) {
+    public EEGReading(String row) {
         String[] params = row.split(",");
         timeStamp = params[0];
         signal_strength = Integer.parseInt(params[1]);
