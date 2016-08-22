@@ -14,6 +14,7 @@ public class GuiMain {
     EEGInputHandler input;
     RawDataWindow rawData;
     Visualizer visualizer;
+    GuiMainToolbar toolbar;
 
     public GuiMain() {
         frame = new JFrame();
@@ -35,12 +36,9 @@ public class GuiMain {
     class StartButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event){
             if (startButton.getText() == "Start Session") {
-                if (rawData == null) {
-                    rawData = new RawDataWindow();
-                }
+
                 //start the EEG stream
                 input = new EEGInputHandler();
-                input.addObserver(rawData);
                 input.addObserver(visualizer);
                 input.initialize();
 
@@ -60,6 +58,15 @@ public class GuiMain {
             //end the session.
             //TODO: add some validation and protect the data we've gathered.
             input = null;
+        }
+    }
+
+    class DebugButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            if (rawData == null) {
+                rawData = new RawDataWindow();
+                input.addObserver(rawData);
+            }
         }
     }
 

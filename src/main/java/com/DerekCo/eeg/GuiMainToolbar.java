@@ -8,6 +8,7 @@ import javax.swing.*;
 public class GuiMainToolbar extends JPanel {
     JButton startButton;
     JButton endButton;
+    JButton debugButton;
 
     public GuiMainToolbar(){
 

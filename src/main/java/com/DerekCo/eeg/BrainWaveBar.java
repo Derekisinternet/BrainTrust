@@ -14,8 +14,8 @@ class BrainWaveBar extends JPanel {
     private int readingInput;
     //not all readings are created equal, so the bar height is a percentage of the
     //max value:
-    private int maxValue;
-    private int maxbarHeight = 100;
+    private int maxInputValue;
+    private int maxbarHeight = 30;
 
     void setColor(Color color) {
         barColor = color;
@@ -25,8 +25,8 @@ class BrainWaveBar extends JPanel {
         readingInput = input;
     }
 
-    private void setMaxValue(int max){
-        maxValue = max;
+    private void setMaxInputValue(int max){
+        maxInputValue = max;
     }
 
     public void paintComponent(Graphics g) {
@@ -36,6 +36,7 @@ class BrainWaveBar extends JPanel {
                 g.fillRect(0, this.getHeight() - 2, 10, this.getHeight());
             } else {
                 g.fillRect(0, this.getHeight() - setBarHeight(readingInput), 10, this.getHeight());
+                //System.out.println("Height: " + String.valueOf(setBarHeight(readingInput)) + "Max: " + String.valueOf(maxInputValue));
             }
         }
         catch (Exception exception) {
@@ -45,17 +46,21 @@ class BrainWaveBar extends JPanel {
 
     //convert raw EEG value into a bar height:
     int setBarHeight(int inputValue){
-        checkMaxValue(inputValue);
-        float percentage = (inputValue / maxValue);
+        checkMaxInputValue(inputValue);
+        System.out.println("Value: " + String.valueOf(inputValue));
+        System.out.println("Max: " + String.valueOf(maxInputValue));
+        float percentage = ( (float) inputValue / (float) maxInputValue);
+        System.out.println("Percentage: " + String.valueOf(percentage));
         float newBarHeight = (percentage * maxbarHeight);
+        System.out.println("Setting bar height to "+ String.valueOf(Math.round(newBarHeight)));
         return Math.round(newBarHeight);
     }
 
     // since different brainwave readings aren't uniform in their values, this method will create
     // an elastic upper bound on what a maxed out bar means.
-    private void checkMaxValue(int input) {
-        if (input > maxValue) {
-            maxValue = input;
+    private void checkMaxInputValue(int input) {
+        if (input > maxInputValue) {
+            setMaxInputValue(input);
         }
     }
 
