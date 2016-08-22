@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57b9b89-a7b1-41e8-9617-a24726129a34" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/DerekCo/eeg/BrainWaveBar.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/BrainWaveBar.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/BrainWaveBar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMainToolbar.java" afterPath="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMainToolbar.java" />
     </list>
     <ignored path="BrainTrust.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GuiMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GuiMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+            <state relative-caret-position="227">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,15 +59,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrainWaveBar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BrainWaveBar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/BrainWaveBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+            <state relative-caret-position="186">
+              <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2384#2385#0" expanded="true" />
-                <element signature="e#2429#2430#0" expanded="true" />
+                <element signature="e#2195#2196#0" expanded="true" />
+                <element signature="e#2240#2241#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,8 +120,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/EEGReading.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/Visualizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMainToolbar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/BrainWaveBar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java" />
       </list>
     </option>
   </component>
@@ -766,8 +764,8 @@
           <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="32" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2384#2385#0" expanded="true" />
-            <element signature="e#2429#2430#0" expanded="true" />
+            <element signature="e#2195#2196#0" expanded="true" />
+            <element signature="e#2240#2241#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -963,24 +961,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/BrainWaveBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+        <state relative-caret-position="186">
+          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2195#2196#0" expanded="true" />
+            <element signature="e#2240#2241#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/BrainWaveBar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DerekCo/eeg/GuiMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state relative-caret-position="227">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2384#2385#0" expanded="true" />
-            <element signature="e#2429#2430#0" expanded="true" />
           </folding>
         </state>
       </provider>

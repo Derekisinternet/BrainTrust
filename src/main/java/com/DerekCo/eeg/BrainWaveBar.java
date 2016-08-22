@@ -12,10 +12,11 @@ class BrainWaveBar extends JPanel {
 
     private Color barColor;
     private int readingInput;
-    //not all readings are created equal, so the bar height is a percentage of the
-    //max value:
+    // not all readings are created equal, so the bar height is set as a percentage of the
+    // input value divide by the max value:
     private int maxInputValue;
-    private int maxbarHeight = 30;
+    //NOTE: if you change maxBarHeight, then update getPreferredSize() to match!
+    private int maxBarHeight = 100;
 
     void setColor(Color color) {
         barColor = color;
@@ -47,12 +48,8 @@ class BrainWaveBar extends JPanel {
     //convert raw EEG value into a bar height:
     int setBarHeight(int inputValue){
         checkMaxInputValue(inputValue);
-        System.out.println("Value: " + String.valueOf(inputValue));
-        System.out.println("Max: " + String.valueOf(maxInputValue));
         float percentage = ( (float) inputValue / (float) maxInputValue);
-        System.out.println("Percentage: " + String.valueOf(percentage));
-        float newBarHeight = (percentage * maxbarHeight);
-        System.out.println("Setting bar height to "+ String.valueOf(Math.round(newBarHeight)));
+        float newBarHeight = (percentage * maxBarHeight);
         return Math.round(newBarHeight);
     }
 
@@ -66,7 +63,7 @@ class BrainWaveBar extends JPanel {
 
     // sets default dimensions when added to the Visualizer. Or any JComponet, really.
     public Dimension getPreferredSize() {
-        return new Dimension(20, 100);
+        return new Dimension(10, 100);
     }
 
 }

@@ -19,7 +19,7 @@ public class GuiMain {
     public GuiMain() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300,300);
+        frame.setSize(300,175);
 
         startButton = new JButton("Start Session");
         frame.getContentPane().add(BorderLayout.NORTH, startButton);
