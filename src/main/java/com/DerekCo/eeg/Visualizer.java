@@ -2,40 +2,53 @@ package com.DerekCo.eeg;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
 /**
  * Created by Mastermind on 8/21/16.
  */
-public class Visualizer extends JPanel implements Observer {
+public class Visualizer implements Observer {
+    private JPanel mainPanel;
     private EEGInputHandler inputs;
     private EEGReading eegReading;
 
-    int maxBarHeight = 60;
+    BrainWaveBar delta;
+    BrainWaveBar theta;
+
+    public Visualizer() {
+        mainPanel = new JPanel();
+        mainPanel.setBackground(Color.black);
+
+        delta = new BrainWaveBar();
+        delta.setColor(Color.BLUE);
+
+        theta = new BrainWaveBar();
+        theta.setColor(Color.green);
+
+        mainPanel.add(delta);
+        mainPanel.add(theta);
+
+    }
+
+    public JPanel getMainPanel(){
+        return this.mainPanel;
+    }
 
     public void update(Observable observable, Object arg) {
         inputs = (EEGInputHandler) observable;
         String message = inputs.getMessage();
         try {
             eegReading = new EEGReading(message);
-            this.repaint();
-        } catch (IndexOutOfBoundsException exception){
+            delta.setReadingInput(eegReading.getAttention());
+            System.out.println("updated Attention's input value to " + String.valueOf(eegReading.getAttention()));
+            delta.repaint();
+        }
+        catch (IndexOutOfBoundsException exception){
             System.out.println("received incomplete EEG reading.");
         }
-    }
-
-    // main method that updates the class
-    public void paintComponent(Graphics g) {
-        g.fillRect(0,0, this.getWidth(), this.getHeight());
-        g.setColor(Color.orange);
-        if (eegReading == null){
-            g.fillRect(10, this.getHeight()-2 ,10,this.getHeight());
-        }
-        else {
-            g.fillRect(10, this.getHeight() - eegReading.getAttention(), 10, this.getHeight());
+        catch(NullPointerException exception) {
+            System.out.println("Exception while updating Visualizer: " + exception);
         }
     }
 

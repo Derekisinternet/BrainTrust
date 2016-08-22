@@ -25,7 +25,7 @@ public class GuiMain {
         startButton.addActionListener(new StartButtonListener());
 
         visualizer = new Visualizer();
-        frame.getContentPane().add(BorderLayout.CENTER, visualizer);
+        frame.getContentPane().add(BorderLayout.CENTER, visualizer.getMainPanel());
 
         // Always have this as the last operation. Otherwise,
         // things after it won't be visible.
