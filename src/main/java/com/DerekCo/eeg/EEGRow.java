@@ -43,9 +43,6 @@ public class EEGRow {
 
     }
 
-    // Getter methods. Since we're doing math operations on these values, I don't want anything
-    // to be able to alter them. #paranoid.
-
     String getTimeStamp() {
         return this.timeStamp;
     }

@@ -3,6 +3,8 @@ package com.DerekCo.eeg;
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.commons.math3.stat.StatUtils;
+
 
 /**
  * Created by Derek on 8/20/16.
@@ -26,4 +28,8 @@ public class SessionStats {
         }
 
     }
+
+//    public int average(String parameter){
+//
+//    }
 }

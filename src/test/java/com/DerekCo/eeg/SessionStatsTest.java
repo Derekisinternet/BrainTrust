@@ -26,4 +26,9 @@ public class SessionStatsTest {
     public  void createsEEGArray() {
         assertEquals(59, stats.rawData.size());
     }
+
+//    @Test
+//    public void findsAverageValue() {
+//        assertEquals(621970, stats.average("delta"));
+//    }
 }
