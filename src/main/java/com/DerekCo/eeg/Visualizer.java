@@ -40,9 +40,12 @@ public class Visualizer implements Observer {
         String message = inputs.getMessage();
         try {
             eegReading = new EEGReading(message);
-            delta.setReadingInput(eegReading.getAttention());
-            System.out.println("updated Attention's input value to " + String.valueOf(eegReading.getAttention()));
+            //update Delta:
+            delta.setReadingInput(eegReading.getDelta());
             delta.repaint();
+            //Update Theta:
+            theta.setReadingInput(eegReading.getTheta());
+            theta.repaint();
         }
         catch (IndexOutOfBoundsException exception){
             System.out.println("received incomplete EEG reading.");

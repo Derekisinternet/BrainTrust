@@ -32,15 +32,19 @@ class BrainWaveBar extends JPanel {
         g.setColor(barColor);
         try {
             if (readingInput == 0) {
-                g.fillRect(10, this.getHeight() - 2, 10, this.getHeight());
+                g.fillRect(0, this.getHeight() - 2, 10, this.getHeight());
             } else {
-                g.fillRect(10, this.getHeight() - readingInput, 10, this.getHeight());
-                System.out.println("Got a new value!");
+                g.fillRect(0, this.getHeight() - readingInput, 10, this.getHeight());
+                System.out.println("BrainWaveBar Got a new value!");
             }
         }
         catch (Exception exception) {
             System.out.println("Exception in BrainWaveBar" + exception.getMessage());
         }
+    }
+
+    public Dimension getPreferredSize() {
+        return new Dimension(20, 100);
     }
 
 }
