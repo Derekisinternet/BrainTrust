@@ -67,27 +67,27 @@ public class EEGReading {
         return this.theta;
     }
 
-    int getLow_alpha() {
+    int getLowAlpha() {
         return this.low_alpha;
     }
 
-    int getHigh_alpha() {
+    int getHighAlpha() {
         return this.high_alpha;
     }
 
-    int getLow_beta() {
+    int getLowBeta() {
         return this.low_beta;
     }
 
-    int getHigh_beta() {
+    int getHighBeta() {
         return this.high_alpha;
     }
 
-    int getLow_gamma() {
+    int getLowGamma() {
         return this.low_gamma;
     }
 
-    int getHigh_gamma() {
+    int getHighGamma() {
         return this.high_gamma;
     }
 
