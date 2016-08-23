@@ -10,20 +10,20 @@ import javax.swing.*;
 public class GuiMain {
     JButton startButton;
     JButton endButton;
+    JButton debugButton;
     JFrame frame;
     EEGInputHandler input;
     RawDataWindow rawData;
     Visualizer visualizer;
-    GuiMainToolbar toolbar;
+    JPanel toolbar;
 
     public GuiMain() {
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setSize(700,350);
+        frame.addWindowListener(new ExitListener());
 
-        startButton = new JButton("Start Session");
-        frame.getContentPane().add(BorderLayout.NORTH, startButton);
-        startButton.addActionListener(new StartButtonListener());
+        initToolbar();
 
         visualizer = new Visualizer();
         frame.getContentPane().add(BorderLayout.CENTER, visualizer.getMainPanel());
@@ -31,6 +31,20 @@ public class GuiMain {
         // Always have this as the last operation. Otherwise,
         // things after it won't be visible.
         frame.setVisible(true);
+    }
+
+    void initToolbar(){
+        toolbar = new JPanel();
+        startButton = new JButton("Start Session");
+        startButton.addActionListener(new StartButtonListener());
+
+        debugButton = new JButton("Debugger");
+        debugButton.addActionListener(new DebugButtonListener());
+
+        toolbar.add(startButton);
+        toolbar.add(debugButton);
+
+        frame.getContentPane().add(BorderLayout.NORTH, toolbar);
     }
 
     class StartButtonListener implements ActionListener {
@@ -65,7 +79,32 @@ public class GuiMain {
         public void actionPerformed(ActionEvent event) {
             if (rawData == null) {
                 rawData = new RawDataWindow();
-                input.addObserver(rawData);
+                try {
+                    input.addObserver(rawData);
+                }
+                catch (NullPointerException exception) {
+                    //TODO: figure out how to wait for input to get initialized.
+                }
+            }
+        }
+    }
+
+    class ExitListener extends WindowAdapter {
+        public void windowClosing(WindowEvent event) {
+            String ObjButtons[] = {"Yes", "No", "Cancel"};
+            int promptResult = JOptionPane.showOptionDialog(null,
+                    "Do You Want to Archive Your Session Before Exiting?", "See You Space Cowboy . . .",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null,
+                    ObjButtons,ObjButtons[0]);
+            if (promptResult == 2) {
+                //exit the window
+                return; //?
+            }
+            else {
+                if (promptResult == 0 ) {
+                    //Save the session
+                }
+                System.exit(0);
             }
         }
     }

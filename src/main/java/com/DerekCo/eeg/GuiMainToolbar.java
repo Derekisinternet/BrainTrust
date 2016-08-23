@@ -9,8 +9,10 @@ public class GuiMainToolbar extends JPanel {
     JButton startButton;
     JButton endButton;
     JButton debugButton;
+    JButton archiveButton;
 
     public GuiMainToolbar(){
+        startButton = new JButton();
 
     }
 }
