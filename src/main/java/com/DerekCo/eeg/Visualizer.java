@@ -14,7 +14,7 @@ public class Visualizer implements Observer {
     private EEGReading eegReading;
 
     BrainWaveBar delta;
-    BrainWaveBar theta;
+    BrainWaveBarWrapper theta;
 
     public Visualizer() {
         mainPanel = new JPanel();
@@ -23,11 +23,10 @@ public class Visualizer implements Observer {
         delta = new BrainWaveBar();
         delta.setColor(Color.BLUE);
 
-        theta = new BrainWaveBar();
-        theta.setColor(Color.green);
+        theta = new BrainWaveBarWrapper("Theta", Color.green);
 
         mainPanel.add(delta);
-        mainPanel.add(theta);
+        mainPanel.add(theta.panel);
 
     }
 
