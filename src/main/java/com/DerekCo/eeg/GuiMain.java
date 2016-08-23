@@ -98,7 +98,6 @@ public class GuiMain {
                     ObjButtons,ObjButtons[0]);
             if (promptResult == 2) {
                 //exit the window
-                return; //?
             }
             else {
                 if (promptResult == 0 ) {
