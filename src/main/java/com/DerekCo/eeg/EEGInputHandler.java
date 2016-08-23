@@ -13,19 +13,13 @@ import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent; 
 import gnu.io.SerialPortEventListener;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Iterator;
 import java.util.Observable;
-import java.util.Observer;
 
 public class EEGInputHandler extends Observable implements SerialPortEventListener{
 	SerialPort serialPort;
-    FileOutputter outputter = new FileOutputter();
 	private String message;
 	
 	/** The port we're normally going to use. */
