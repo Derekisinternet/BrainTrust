@@ -60,12 +60,6 @@ public class Visualizer implements Observer {
         String message = inputs.getMessage();
         try {
             eegReading = new EEGReading(message);
-//            //update Delta:
-//            delta.setReadingInput(eegReading.getDelta());
-//            delta.repaint();
-//            //Update Theta:
-//            theta.setReadingInput(eegReading.getTheta());
-//            theta.repaint();
             updateFields(eegReading);
         }
         catch (IndexOutOfBoundsException exception){
@@ -76,7 +70,7 @@ public class Visualizer implements Observer {
         }
     }
 
-    private void updateFields(EEGReading input) {
+    private synchronized void updateFields(EEGReading input) {
         delta.updateChart(input.getDelta());
         theta.updateChart(input.getTheta());
         lowAlpha.updateChart(input.getLowAlpha());

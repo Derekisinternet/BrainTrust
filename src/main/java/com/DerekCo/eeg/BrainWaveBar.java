@@ -13,10 +13,10 @@ class BrainWaveBar extends JPanel {
     private Color barColor;
     private int readingInput;
     // not all readings are created equal, so the bar height is set as a percentage of the
-    // input value divide by the max value:
+    // input value divide by the max Input value:
     private int maxInputValue;
     //NOTE: if you change maxBarHeight, then update getPreferredSize() to match!
-    private int maxBarHeight = 100;
+    private int maxBarHeight = 200;
 
     void setColor(Color color) {
         barColor = color;
@@ -63,7 +63,7 @@ class BrainWaveBar extends JPanel {
 
     // sets default dimensions when added to the Visualizer. Or any JComponet, really.
     public Dimension getPreferredSize() {
-        return new Dimension(10, 100);
+        return new Dimension(10, 200);
     }
 
 }

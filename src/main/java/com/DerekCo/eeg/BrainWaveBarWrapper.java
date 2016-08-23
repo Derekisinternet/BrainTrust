@@ -5,10 +5,7 @@ import java.awt.*;
 
 /**
  * Created by Mastermind on 8/22/16.
- * houses a BrainWaveBar and displays data about it.
- * Designed to be a transparent drop-in for BrainWaveBar, such that all you
- * have to do is change the constructor, and everything else should work.
- * Maybe not the best way to design it, but I was lazy.
+ * houses a BrainWaveBar and displays data about it, like a label and its numerical value.
  */
 public class BrainWaveBarWrapper {
 
@@ -39,14 +36,9 @@ public class BrainWaveBarWrapper {
         panel.add(panelLabel);
     }
 
-    void updateChart(int input) {
+    synchronized void updateChart(int input) {
         bar.setReadingInput(input);
-        setPanelValue(input);
         bar.repaint();
-    }
-
-    void setReadingInput(int input) {
-        bar.setReadingInput(input);
         setPanelValue(input);
     }
 
@@ -54,13 +46,10 @@ public class BrainWaveBarWrapper {
         panelValue.setText(String.valueOf(input));
     }
 
-    void repaint() {
-        bar.repaint();
-    }
 
     // sets default dimensions when added to the Visualizer. Or any JComponet, really.
     public Dimension getPreferredSize() {
-        return new Dimension(10, 150);
+        return new Dimension(10, 250);
     }
 
 }
