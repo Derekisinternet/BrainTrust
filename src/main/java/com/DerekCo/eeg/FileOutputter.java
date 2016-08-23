@@ -10,9 +10,8 @@ import java.io.*;
 public class FileOutputter {
     private String fileName;
 
-    public FileOutputter() {
-        String dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH.mm.ss").format(new Date());
-        fileName =  "EEG_Readings/" + dateFormat + ".csv";
+    public FileOutputter(String name) {
+        fileName =  "EEG_Readings/" + name + ".csv";
     }
 
     void append(String line) {
