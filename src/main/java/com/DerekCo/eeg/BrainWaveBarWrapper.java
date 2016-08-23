@@ -11,15 +11,17 @@ import java.awt.*;
  * Maybe not the best way to design it, but I was lazy.
  */
 public class BrainWaveBarWrapper {
-    BrainWaveBar bar;
+
     JPanel panel;
-    TextField panelLabel;
-    TextField panelValue;
+    private BrainWaveBar bar;
+    private TextField panelLabel;
+    private TextField panelValue;
 
     public BrainWaveBarWrapper(String label, Color color) {
         panel = new JPanel();
 
         panelValue = new TextField();
+        panelValue.setText("0");
         panelValue.setEditable(false);
 
         bar = new BrainWaveBar();
@@ -35,6 +37,12 @@ public class BrainWaveBarWrapper {
         panel.add(panelValue);
         panel.add(bar);
         panel.add(panelLabel);
+    }
+
+    void updateChart(int input) {
+        bar.setReadingInput(input);
+        setPanelValue(input);
+        bar.repaint();
     }
 
     void setReadingInput(int input) {

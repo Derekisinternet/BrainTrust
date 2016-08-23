@@ -34,9 +34,9 @@ class BrainWaveBar extends JPanel {
         g.setColor(barColor);
         try {
             if (readingInput == 0) {
-                g.fillRect(0, this.getHeight() - 2, 10, this.getHeight());
+                g.fillRect(0, this.getHeight() - 2, this.getWidth(), this.getHeight());
             } else {
-                g.fillRect(0, this.getHeight() - setBarHeight(readingInput), 10, this.getHeight());
+                g.fillRect(0, this.getHeight() - setBarHeight(readingInput), this.getWidth(), this.getHeight());
                 //System.out.println("Height: " + String.valueOf(setBarHeight(readingInput)) + "Max: " + String.valueOf(maxInputValue));
             }
         }
