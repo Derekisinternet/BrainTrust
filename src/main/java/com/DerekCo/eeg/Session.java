@@ -34,5 +34,6 @@ public class Session {
         for (String record : records ) {
             file.append(record);
         }
+        System.out.println("Session Archived!");
     }
 }

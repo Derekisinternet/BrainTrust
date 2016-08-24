@@ -16,6 +16,7 @@ public class GuiMain {
     RawDataWindow rawData;
     Visualizer visualizer;
     JPanel toolbar;
+    Session session;
 
     public GuiMain() {
         frame = new JFrame();
@@ -27,6 +28,8 @@ public class GuiMain {
 
         visualizer = new Visualizer();
         frame.getContentPane().add(BorderLayout.CENTER, visualizer.getMainPanel());
+
+        session = new Session();
 
         // Always have this as the last operation. Otherwise,
         // things after it won't be visible.
