@@ -1,22 +1,21 @@
 package com.DerekCo.eeg;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by Mastermind on 8/22/16.
  * collects the raw data of a session for things like archiving or
  * Stats analysis.
  */
-public class Session {
+public class Session implements Observer {
     private List<String> records;
     private int lastArchivedRecord;
-    boolean archiveOutOfDate;
-    String sessionName;
+    private boolean archiveOutOfDate;
+    private String sessionName;
+    private EEGInputHandler input;
 
-    public void Session() {
+    public Session() {
         records = new ArrayList<String>();
         archiveOutOfDate = true;
         // the session name is the time at the session start. Seems reasonable.
@@ -24,8 +23,11 @@ public class Session {
         sessionName = new SimpleDateFormat("yyyy_MM_dd_HH.mm.ss").format(new Date());
     }
 
-    public void record(String record){
+    public void update(Observable observable, Object arg){
+        input = (EEGInputHandler) observable;
+        String record = input.getMessage();
         records.add(record);
+        System.out.println("session: " + record);
         archiveOutOfDate = true;
     }
 
@@ -34,6 +36,6 @@ public class Session {
         for (String record : records ) {
             file.append(record);
         }
-        System.out.println("Session Archived!");
+        //System.out.println("Session Archived!");
     }
 }

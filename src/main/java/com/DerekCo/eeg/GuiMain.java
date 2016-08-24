@@ -9,7 +9,6 @@ import javax.swing.*;
  */
 public class GuiMain {
     JButton startButton;
-    JButton endButton;
     JButton debugButton;
     JFrame frame;
     EEGInputHandler input;
@@ -57,8 +56,8 @@ public class GuiMain {
                 //start the EEG stream
                 input = new EEGInputHandler();
                 input.addObserver(visualizer);
+                input.addObserver(session);
                 input.initialize();
-
                 startButton.setText("Pause Session");
             }
             else {
@@ -70,13 +69,6 @@ public class GuiMain {
         }
     }
 
-    class EndButtonListener implements ActionListener {
-        public void actionPerformed(ActionEvent event) {
-            //end the session.
-            //TODO: add some validation and protect the data we've gathered.
-            input = null;
-        }
-    }
 
     class DebugButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
@@ -105,6 +97,7 @@ public class GuiMain {
             else {
                 if (promptResult == 0 ) {
                     //Save the session
+                    session.archive();
                 }
                 System.exit(0);
             }
