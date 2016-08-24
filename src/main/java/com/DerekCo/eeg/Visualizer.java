@@ -32,23 +32,23 @@ public class Visualizer implements Observer {
     }
 
     void initFields() {
-        delta = new BrainWaveBarWrapper("Delta", Color.BLUE);
-        theta = new BrainWaveBarWrapper("Theta", Color.green);
         lowAlpha = new BrainWaveBarWrapper("Low Alpha", Color.ORANGE);
         highAlpha = new BrainWaveBarWrapper("High Alpha", Color.ORANGE);
         lowBeta = new BrainWaveBarWrapper("Low Beta", Color.MAGENTA);
         highBeta = new BrainWaveBarWrapper("High Beta", Color.MAGENTA);
         lowGamma = new BrainWaveBarWrapper("Low Gamma", Color.RED);
         highGamma = new BrainWaveBarWrapper("High Gamma", Color.RED);
+        delta = new BrainWaveBarWrapper("Delta", Color.BLUE);
+        theta = new BrainWaveBarWrapper("Theta", Color.green);
 
-        mainPanel.add(delta.panel);
-        mainPanel.add(theta.panel);
         mainPanel.add(lowAlpha.panel);
         mainPanel.add(highAlpha.panel);
         mainPanel.add(lowBeta.panel);
         mainPanel.add(highBeta.panel);
         mainPanel.add(lowGamma.panel);
         mainPanel.add(highGamma.panel);
+        mainPanel.add(delta.panel);
+        mainPanel.add(theta.panel);
     }
 
     public JPanel getMainPanel(){
