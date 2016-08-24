@@ -27,7 +27,6 @@ public class Session implements Observer {
         input = (EEGInputHandler) observable;
         String record = input.getMessage();
         records.add(record);
-        System.out.println("session: " + record);
         archiveOutOfDate = true;
     }
 
