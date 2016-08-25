@@ -21,6 +21,7 @@ public class NeuroSkyBarWrapper {
         barLabel.setEditable(false);
         barValue = new TextField("0");
         barValue.setEditable(false);
+        barValue.setColumns(3);
 
         panel.add(barLabel);
         panel.add(bar);

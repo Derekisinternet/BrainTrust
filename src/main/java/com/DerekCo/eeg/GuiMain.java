@@ -20,7 +20,7 @@ public class GuiMain {
     public GuiMain() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        frame.setSize(700,350);
+        frame.setSize(750,350);
         frame.addWindowListener(new ExitListener());
 
         initToolbar();

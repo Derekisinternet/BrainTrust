@@ -36,8 +36,7 @@ public class Visualizer implements Observer {
         mainPanel.add(brainWavePanel);
 
         neuroSky = new NeuroSkyPanel();
-        //TESTING ONLY. REMOVE:
-        neuroSky.updateFields(0, 200, 200);
+
         mainPanel.add(neuroSky.panel);
     }
 
