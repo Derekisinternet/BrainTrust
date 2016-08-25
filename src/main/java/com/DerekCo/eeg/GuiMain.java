@@ -18,7 +18,7 @@ public class GuiMain {
     Session session;
 
     public GuiMain() {
-        frame = new JFrame();
+        frame = new JFrame("BrainTrust");
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setSize(750,350);
         frame.addWindowListener(new ExitListener());
