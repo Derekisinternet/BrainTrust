@@ -10,6 +10,7 @@ import java.util.Observer;
  */
 public class Visualizer implements Observer {
     private JPanel mainPanel;
+    private JPanel brainWavePanel;
     private EEGInputHandler inputs;
     private EEGReading eegReading;
 
@@ -21,17 +22,26 @@ public class Visualizer implements Observer {
     BrainWaveBarWrapper highBeta;
     BrainWaveBarWrapper lowGamma;
     BrainWaveBarWrapper highGamma;
+    NeuroSkyPanel neuroSky;
 
 
     public Visualizer() {
+        //main panel stacks brainwave panel on top of NeuroSky panel
         mainPanel = new JPanel();
-        mainPanel.setBackground(Color.black);
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
-        initFields();
+        brainWavePanel = new JPanel();
+        brainWavePanel.setBackground(Color.black);
+        initBrainWaveFields();
+        mainPanel.add(brainWavePanel);
 
+        neuroSky = new NeuroSkyPanel();
+        //TESTING ONLY. REMOVE:
+        neuroSky.updateFields(0, 200, 200);
+        mainPanel.add(neuroSky.panel);
     }
 
-    void initFields() {
+    void initBrainWaveFields() {
         lowAlpha = new BrainWaveBarWrapper("Low Alpha", Color.ORANGE);
         highAlpha = new BrainWaveBarWrapper("High Alpha", Color.ORANGE);
         lowBeta = new BrainWaveBarWrapper("Low Beta", Color.MAGENTA);
@@ -41,15 +51,16 @@ public class Visualizer implements Observer {
         delta = new BrainWaveBarWrapper("Delta", Color.BLUE);
         theta = new BrainWaveBarWrapper("Theta", Color.green);
 
-        mainPanel.add(lowAlpha.panel);
-        mainPanel.add(highAlpha.panel);
-        mainPanel.add(lowBeta.panel);
-        mainPanel.add(highBeta.panel);
-        mainPanel.add(lowGamma.panel);
-        mainPanel.add(highGamma.panel);
-        mainPanel.add(delta.panel);
-        mainPanel.add(theta.panel);
+        brainWavePanel.add(lowAlpha.panel);
+        brainWavePanel.add(highAlpha.panel);
+        brainWavePanel.add(lowBeta.panel);
+        brainWavePanel.add(highBeta.panel);
+        brainWavePanel.add(lowGamma.panel);
+        brainWavePanel.add(highGamma.panel);
+        brainWavePanel.add(delta.panel);
+        brainWavePanel.add(theta.panel);
     }
+
 
     public JPanel getMainPanel(){
         return this.mainPanel;
@@ -79,6 +90,7 @@ public class Visualizer implements Observer {
         highBeta.updateChart(input.getHighBeta());
         lowGamma.updateChart(input.getLowGamma());
         highGamma.updateChart(input.getHighGamma());
+        neuroSky.updateFields(input.getSignalStrength(), input.getAttention(), input.getMeditation());
     }
 
 }

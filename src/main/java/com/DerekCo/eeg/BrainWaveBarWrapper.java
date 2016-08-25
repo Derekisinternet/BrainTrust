@@ -12,14 +12,14 @@ public class BrainWaveBarWrapper {
     JPanel panel;
     private BrainWaveBar bar;
     private TextField panelLabel;
-    private TextField panelValue;
+    private TextField brainWaveValue;
 
     public BrainWaveBarWrapper(String label, Color color) {
         panel = new JPanel();
 
-        panelValue = new TextField();
-        panelValue.setText("0");
-        panelValue.setEditable(false);
+        brainWaveValue = new TextField();
+        brainWaveValue.setText("0");
+        brainWaveValue.setEditable(false);
 
         bar = new BrainWaveBar();
         bar.setColor(color);
@@ -31,7 +31,7 @@ public class BrainWaveBarWrapper {
         //set the panel to stack components vertically:
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        panel.add(panelValue);
+        panel.add(brainWaveValue);
         panel.add(bar);
         panel.add(panelLabel);
     }
@@ -39,11 +39,11 @@ public class BrainWaveBarWrapper {
     synchronized void updateChart(int input) {
         bar.setReadingInput(input);
         bar.repaint();
-        setPanelValue(input);
+        setBrainWaveValue(input);
     }
 
-    void setPanelValue(int input){
-        panelValue.setText(String.valueOf(input));
+    void setBrainWaveValue(int input){
+        brainWaveValue.setText(String.valueOf(input));
     }
 
 

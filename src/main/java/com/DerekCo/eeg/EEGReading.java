@@ -47,7 +47,7 @@ public class EEGReading {
         return this.timeStamp;
     }
 
-    int getSignal_strength(){
+    int getSignalStrength(){
         return this.signal_strength;
     }
 
