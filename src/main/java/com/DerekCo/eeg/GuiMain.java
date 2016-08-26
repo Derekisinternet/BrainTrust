@@ -9,6 +9,7 @@ import javax.swing.*;
  */
 public class GuiMain {
     JButton startButton;
+    JButton sessionButton;
     JButton debugButton;
     JFrame frame;
     EEGInputHandler input;
@@ -40,6 +41,10 @@ public class GuiMain {
         startButton = new JButton("Start Session");
         startButton.addActionListener(new StartButtonListener());
 
+        sessionButton = (new JButton("Session"));
+        sessionButton.addActionListener(new SessionButtonListener());
+
+
         debugButton = new JButton("Debugger");
         debugButton.addActionListener(new DebugButtonListener());
 
@@ -69,6 +74,12 @@ public class GuiMain {
         }
     }
 
+    class SessionButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            new SessionPanel();
+        }
+    }
+
 
     class DebugButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
@@ -86,21 +97,23 @@ public class GuiMain {
 
     class ExitListener extends WindowAdapter {
         public void windowClosing(WindowEvent event) {
-            String ObjButtons[] = {"Yes", "No", "Cancel"};
-            int promptResult = JOptionPane.showOptionDialog(null,
-                    "Do You Want to Archive Your Session Before Exiting?", "See You Space Cowboy . . .",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null,
-                    ObjButtons,ObjButtons[0]);
-            if (promptResult == 2) {
-                //exit the window
-            }
-            else {
-                if (promptResult == 0 ) {
-                    //Save the session
-                    session.archive();
+            System.out.println(session.getRecordLength());
+            if (session.getRecordLength() > 0) {
+                String ObjButtons[] = {"Yes", "No", "Cancel"};
+                int promptResult = JOptionPane.showOptionDialog(null,
+                        "Do You Want to Archive Your Session Before Exiting?", "See You Space Cowboy . . .",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null,
+                        ObjButtons, ObjButtons[0]);
+                if (promptResult == 2) {
+                    //exit the window
+                } else {
+                    if (promptResult == 0) {
+                        //Save the session
+                        session.archive();
+                    }
                 }
-                System.exit(0);
             }
+            System.exit(0);
         }
     }
 

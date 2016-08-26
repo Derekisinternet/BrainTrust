@@ -37,4 +37,8 @@ public class Session implements Observer {
         }
         //System.out.println("Session Archived!");
     }
+
+    public int getRecordLength() {
+        return records.size();
+    }
 }
