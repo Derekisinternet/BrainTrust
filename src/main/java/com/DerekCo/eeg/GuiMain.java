@@ -41,7 +41,7 @@ public class GuiMain {
         startButton = new JButton("Start Session");
         startButton.addActionListener(new StartButtonListener());
 
-        sessionButton = (new JButton("Session"));
+        sessionButton = (new JButton("Session Data"));
         sessionButton.addActionListener(new SessionButtonListener());
 
 
@@ -49,6 +49,7 @@ public class GuiMain {
         debugButton.addActionListener(new DebugButtonListener());
 
         toolbar.add(startButton);
+        toolbar.add(sessionButton);
         toolbar.add(debugButton);
 
         frame.getContentPane().add(BorderLayout.NORTH, toolbar);
@@ -76,7 +77,15 @@ public class GuiMain {
 
     class SessionButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            new SessionPanel();
+            JFrame sessionFrame = new JFrame("Session Data");
+            sessionFrame.setDefaultCloseOperation(sessionFrame.DISPOSE_ON_CLOSE);
+            sessionFrame.setSize(380,530);
+
+            SessionPanel session = new SessionPanel();
+            System.out.println("Session!");
+            sessionFrame.add(session.getPanel());
+
+            sessionFrame.setVisible(true);
         }
     }
 

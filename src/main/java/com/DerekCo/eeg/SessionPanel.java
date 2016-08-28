@@ -8,12 +8,18 @@ import java.util.Observer;
  * Created by Mastermind on 8/25/16.
  */
 public class SessionPanel implements Observer{
-    private JPanel mainPanel;
-    private JPanel notesPanel;
+    private JPanel panel;
+    private SessionNotes notes;
     private EEGInputHandler inputs;
     private EEGReading eegReading;
 
     public SessionPanel() {
+        panel = new JPanel();
+        //set the panel to stack components vertically:
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+        notes = new SessionNotes();
+        panel.add(notes.getMainPanel());
 
     }
 
@@ -32,7 +38,12 @@ public class SessionPanel implements Observer{
         }
     }
 
+    public JPanel getPanel(){
+        return panel;
+    }
+
     private synchronized void updateFields(EEGReading input) {
 
     }
+
 }

@@ -22,9 +22,6 @@ public class NeuroSkyPanel {
 
         panel.add(attention.panel);
         panel.add(meditation.panel);
-
-        //FOR TESTING PURPOSES ONLY:
-
     }
 
     public void updateFields(int signalNum, int attentionNum, int meditationNum) {

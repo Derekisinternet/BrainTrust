@@ -20,9 +20,9 @@ public class RawDataWindow implements Observer {
         //dimensions: (width, height)
         frame.setSize(580,530);
         frame.setVisible(true);
+        frame.getContentPane().add(BorderLayout.CENTER,panel);
 
         panel = new JPanel();
-        frame.getContentPane().add(BorderLayout.CENTER,panel);
 
         text = new JTextArea(30, 48);
         text.setLineWrap(true);
