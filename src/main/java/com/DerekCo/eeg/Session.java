@@ -31,7 +31,7 @@ public class Session implements Observer {
     }
 
     public void archive() {
-        FileOutputter file = new FileOutputter("EEG_Readings", sessionName, ".csv");
+        FileOutputter file = new FileOutputter("EEG_Readings", sessionName, ".csv", true);
         for (String record : records ) {
             file.append(record);
         }

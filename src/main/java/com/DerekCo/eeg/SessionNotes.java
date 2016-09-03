@@ -8,15 +8,13 @@ import java.io.IOException;
  */
 public class SessionNotes {
     String fileDir = "Session_Notes/";
-    String filePath;
+    String fileName;
 
     public SessionNotes(String sessionName) {
-        filePath = fileDir + sessionName + ".csv";
+        fileName = sessionName;
     }
 
     public void archive(String contents) {
-        try {
-            FileWriter writer = new FileWriter(filePath, false);
-        } catch (IOException exception){}
+        FileOutputter file = new FileOutputter(fileDir, fileName, false);
     }
 }
