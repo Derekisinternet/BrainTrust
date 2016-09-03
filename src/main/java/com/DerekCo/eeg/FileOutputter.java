@@ -10,8 +10,12 @@ import java.io.*;
 public class FileOutputter {
     private String fileName;
 
-    public FileOutputter(String name) {
-        fileName =  "EEG_Readings/" + name + ".csv";
+    public FileOutputter(String filePath, String name) {
+        fileName =  filePath + name;
+    }
+
+    public FileOutputter(String filePath, String fileName, String suffix){
+        fileName = filePath + fileName + suffix;
     }
 
     void append(String line) {

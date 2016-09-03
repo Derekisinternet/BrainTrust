@@ -9,7 +9,7 @@ import java.util.Observer;
  */
 public class SessionPanel implements Observer{
     private JPanel panel;
-    private SessionNotes notes;
+    private SessionNotesPanel notes;
     private EEGInputHandler inputs;
     private EEGReading eegReading;
 
@@ -18,7 +18,7 @@ public class SessionPanel implements Observer{
         //set the panel to stack components vertically:
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        notes = new SessionNotes();
+        notes = new SessionNotesPanel();
         panel.add(notes.getMainPanel());
 
     }
