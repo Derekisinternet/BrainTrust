@@ -17,6 +17,8 @@ public class GuiMain {
     Visualizer visualizer;
     JPanel toolbar;
     Session session;
+    SessionNotes sessionNotes;
+    SessionPanel sessionPanel;
 
     public GuiMain() {
         frame = new JFrame("BrainTrust");
@@ -30,6 +32,7 @@ public class GuiMain {
         frame.getContentPane().add(BorderLayout.CENTER, visualizer.getMainPanel());
 
         session = new Session();
+        sessionNotes = new SessionNotes(session.getName());
 
         // Always have this as the last operation. Otherwise,
         // things after it won't be visible.
@@ -55,7 +58,7 @@ public class GuiMain {
         frame.getContentPane().add(BorderLayout.NORTH, toolbar);
     }
 
-    class StartButtonListener implements ActionListener {
+    private class StartButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event){
             if (startButton.getText() == "Start Session") {
 
@@ -78,19 +81,28 @@ public class GuiMain {
     class SessionButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             JFrame sessionFrame = new JFrame("Session Data");
+            sessionFrame.addWindowListener(new SessionWindowExitListener());
             sessionFrame.setDefaultCloseOperation(sessionFrame.DISPOSE_ON_CLOSE);
             sessionFrame.setSize(380,530);
 
-            SessionPanel session = new SessionPanel();
-            System.out.println("Session!");
-            sessionFrame.add(session.getPanel());
+            sessionPanel = new SessionPanel(getSessionName(), sessionNotes);
+            sessionFrame.add(sessionPanel.getPanel());
 
             sessionFrame.setVisible(true);
+        }
+        //access the instance variable of the outer class:
+        private String getSessionName(){return session.getName();}
+    }
+
+    private class SessionWindowExitListener extends WindowAdapter {
+        public void windowClosing(WindowEvent event) {
+            //save the sessionNotes.
+            sessionPanel.close();
         }
     }
 
 
-    class DebugButtonListener implements ActionListener {
+    private class DebugButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (rawData == null) {
                 rawData = new RawDataWindow();
@@ -104,9 +116,9 @@ public class GuiMain {
         }
     }
 
-    class ExitListener extends WindowAdapter {
+    private class ExitListener extends WindowAdapter {
         public void windowClosing(WindowEvent event) {
-            System.out.println(session.getRecordLength());
+//            System.out.println(session.getRecordLength());
             if (session.getRecordLength() > 0) {
                 String ObjButtons[] = {"Yes", "No", "Cancel"};
                 int promptResult = JOptionPane.showOptionDialog(null,
@@ -119,6 +131,7 @@ public class GuiMain {
                     if (promptResult == 0) {
                         //Save the session
                         session.archive();
+                        sessionPanel.close();
                     }
                 }
             }

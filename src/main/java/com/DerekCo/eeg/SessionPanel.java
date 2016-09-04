@@ -8,18 +8,24 @@ import java.util.Observer;
  * Created by Mastermind on 8/25/16.
  */
 public class SessionPanel implements Observer{
+
+    private String sessionName;
+
     private JPanel panel;
-    private SessionNotesPanel notes;
+    private SessionNotesPanel notesPanel;
     private EEGInputHandler inputs;
     private EEGReading eegReading;
 
-    public SessionPanel() {
+    public SessionPanel(String name, SessionNotes notes) {
+
+        sessionName = name;
+
         panel = new JPanel();
         //set the panel to stack components vertically:
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        notes = new SessionNotesPanel();
-        panel.add(notes.getMainPanel());
+        notesPanel = new SessionNotesPanel(sessionName, notes);
+        panel.add(notesPanel.getMainPanel());
 
     }
 
@@ -34,7 +40,7 @@ public class SessionPanel implements Observer{
             System.out.println("received incomplete EEG reading.");
         }
         catch(NullPointerException exception) {
-            System.out.println("Exception while updating Visualizer: " + exception);
+            System.out.println("Exception while updating SessionPanel: " + exception);
         }
     }
 
@@ -44,6 +50,10 @@ public class SessionPanel implements Observer{
 
     private synchronized void updateFields(EEGReading input) {
 
+    }
+
+    public void close () {
+        notesPanel.close();
     }
 
 }

@@ -22,7 +22,7 @@ public class FileOutputter {
         appendBool = append;
     }
 
-    void append(String line) {
+    void output(String line) {
         //add a newline char at the end, so we get a new row each time we write.
         line = line + "\n";
         try {

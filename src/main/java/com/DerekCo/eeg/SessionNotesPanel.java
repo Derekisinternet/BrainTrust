@@ -17,8 +17,14 @@ public class SessionNotesPanel {
     JTextArea inputField;
     JTextField inputLabel;
     JButton submit;
+    String sessionName;
+    SessionNotes notesObj;
 
-    public SessionNotesPanel(){
+    public SessionNotesPanel(String name, SessionNotes notes){
+
+        sessionName = name;
+        notesObj = notes;
+
         panel = new JPanel();
         panel.setBackground(Color.DARK_GRAY);
         //set the panel to stack components vertically:
@@ -28,6 +34,7 @@ public class SessionNotesPanel {
         recordField = new JTextArea(3, 10);
         recordField.setEditable(false);
         recordField.setLineWrap(true);
+        populateRecordField();
 
         buffer = new JPanel();
         buffer.setBackground(Color.LIGHT_GRAY);
@@ -49,6 +56,15 @@ public class SessionNotesPanel {
         panel.add(inputField);
         panel.add(submit);
 
+    }
+
+    void populateRecordField() {
+        String record = notesObj.getNotes();
+        recordField.append(record);
+    }
+
+    void close() {
+        notesObj.archive(recordField.getText());
     }
 
     public JPanel getMainPanel() {

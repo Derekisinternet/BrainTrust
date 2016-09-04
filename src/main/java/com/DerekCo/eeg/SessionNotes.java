@@ -16,5 +16,13 @@ public class SessionNotes {
 
     public void archive(String contents) {
         FileOutputter file = new FileOutputter(fileDir, fileName, false);
+        file.output(contents);
+    }
+
+    public String getNotes() {
+        String notesRecord = "";
+        //if the file exists, return the contents
+        //else, return an empty string.
+        return notesRecord;
     }
 }
