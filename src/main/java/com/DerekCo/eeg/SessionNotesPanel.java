@@ -34,6 +34,7 @@ public class SessionNotesPanel {
         recordField = new JTextArea(3, 10);
         recordField.setEditable(false);
         recordField.setLineWrap(true);
+        recordField.setWrapStyleWord(true);
         populateRecordField();
 
         buffer = new JPanel();
@@ -46,6 +47,7 @@ public class SessionNotesPanel {
         inputField = new JTextArea(3, 2);
         inputField.setEditable(true);
         inputField.setLineWrap(true);
+        inputField.setWrapStyleWord(true);
 
 
         submit = new JButton("Submit");
