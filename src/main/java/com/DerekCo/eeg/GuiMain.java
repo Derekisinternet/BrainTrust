@@ -131,7 +131,11 @@ public class GuiMain {
                     if (promptResult == 0) {
                         //Save the session
                         session.archive();
-                        sessionPanel.close();
+                        try {sessionPanel.close();}
+                        catch (NullPointerException exception){
+                            //this means that the window isn't open, so we cool.
+                        }
+
                     }
                 }
             }

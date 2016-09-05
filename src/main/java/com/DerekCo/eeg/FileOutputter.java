@@ -8,18 +8,19 @@ import java.io.*;
  * Created by Mastermind on 8/20/16.
  */
 public class FileOutputter {
+
     private String fileName;
-    Boolean appendBool;
+    private boolean appendBool;
 
     public FileOutputter(String filePath, String name, Boolean append) {
 
-        fileName =  filePath + name;
-        appendBool = append;
+        this.fileName =  filePath + name;
+        this.appendBool = append;
     }
 
     public FileOutputter(String filePath, String fileName, String suffix, Boolean append){
-        fileName = filePath + fileName + suffix;
-        appendBool = append;
+        this.fileName = filePath + fileName + suffix;
+        this.appendBool = append;
     }
 
     void output(String line) {
@@ -32,7 +33,10 @@ public class FileOutputter {
         } catch(IOException except) {
             except.printStackTrace();
         }
+    }
 
-
+    //for debugging:
+    String getFileName() {
+        return fileName;
     }
 }
