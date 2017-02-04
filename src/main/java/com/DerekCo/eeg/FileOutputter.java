@@ -25,7 +25,7 @@ public class FileOutputter {
 
     void output(String line) {
         //add a newline char at the end, so we get a new row each time we write.
-        line = line + "\n";
+        line += "\n";
         try {
             FileWriter writer = new FileWriter(fileName, appendBool);
             writer.write(line);
