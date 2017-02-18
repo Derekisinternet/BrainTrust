@@ -24,6 +24,7 @@ public class EEGRow {
 
     String[] values;
 
+
     public EEGRow(String row) {
         values = row.split(",");
     }
@@ -36,11 +37,33 @@ public class EEGRow {
         return Integer.parseInt(values[1]);
     }
 
+    int getAttention() { return Integer.parseInt(values[2]);}
+
+    int getMeditation() {return Integer.parseInt(values[3]);}
+
+    int getDelta() {return Integer.parseInt(values[4]);}
+
+    int gettheta() {return Integer.parseInt(values[5]);}
+
+    int getLowAlpha() {return Integer.parseInt(values[6]);}
+
+    int getHighAlpha() {return Integer.parseInt(values[7]);}
+
+    int getlowBeta() {return Integer.parseInt(values[8]);}
+
+    int getHighBeta() {return Integer.parseInt(values[9]);}
+
+    int getlowGamma() {return Integer.parseInt(values[10]);}
+
+    int getHighGamma() {return Integer.parseInt(values[11]);}
+
     int getReadingAt(int index) {
         if (index > 1 && index < 12) {
             return Integer.parseInt(values[index]);
         } else throw new IllegalArgumentException("The index range is 2-11");
     }
+
+
 
 
     // signal_strentgh can be 0-200. The lower the value, the higher the strength. Counterintuitive,

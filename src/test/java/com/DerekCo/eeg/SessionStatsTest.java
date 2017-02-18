@@ -27,8 +27,9 @@ public class SessionStatsTest {
         assertEquals(59, stats.rawData.size());
     }
 
-//    @Test
-//    public void findsAverageValue() {
-//        assertEquals(621970, stats.average("delta"));
-//    }
+    @Test
+    public void findsAverageValue() {
+        // 4 = delta waves
+        assertEquals(621970, stats.getAverageValue(4));
+    }
 }
