@@ -14,7 +14,7 @@ public class SessionPanel implements Observer{
     private JPanel panel;
     private SessionNotesPanel notesPanel;
     private EEGInputHandler inputs;
-    private EEGReading eegReading;
+    private EEGRow eegRow;
 
     public SessionPanel(String name, SessionNotes notes) {
 
@@ -33,8 +33,8 @@ public class SessionPanel implements Observer{
         inputs = (EEGInputHandler) observable;
         String message = inputs.getMessage();
         try {
-            eegReading = new EEGReading(message);
-            updateFields(eegReading);
+            eegRow = new EEGRow(message);
+            updateFields(eegRow);
         }
         catch (IndexOutOfBoundsException exception){
             System.out.println("received incomplete EEG reading.");
@@ -48,7 +48,7 @@ public class SessionPanel implements Observer{
         return panel;
     }
 
-    private synchronized void updateFields(EEGReading input) {
+    private synchronized void updateFields(EEGRow input) {
 
     }
 

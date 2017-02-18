@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Ingests a bunch of EEG Rows and does stats operations on them.
  */
 public class SessionStats {
-    List<EEGReading> rawData = new ArrayList<EEGReading>();
+    List<EEGRow> rawData = new ArrayList<EEGRow>();
 
     public SessionStats(File filename) {
         try {
@@ -19,7 +19,7 @@ public class SessionStats {
             String line = null;
 
             while ((line = reader.readLine()) != null) {
-                EEGReading row = new EEGReading(line);
+                EEGRow row = new EEGRow(line);
                 rawData.add(row);
             }
         } catch(Exception except){
@@ -28,7 +28,13 @@ public class SessionStats {
 
     }
 
-//    public int average(String parameter){
-//
-//    }
+    public int getAverageValue( int index) {
+        int numRows = 0;
+        int total = 0;
+        for (EEGRow row : rawData) {
+            total += row.getReadingAt(index);
+            numRows +=1;
+        }
+        return total / numRows;
+    }
 }
