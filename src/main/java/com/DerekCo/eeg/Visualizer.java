@@ -12,7 +12,7 @@ public class Visualizer implements Observer {
     private JPanel mainPanel;
     private JPanel brainWavePanel;
     private EEGInputHandler inputs;
-    private EEGRow eegRow;
+    private EEGReading eegReading;
 
     BrainWaveBarWrapper delta;
     BrainWaveBarWrapper theta;
@@ -69,8 +69,8 @@ public class Visualizer implements Observer {
         inputs = (EEGInputHandler) observable;
         String message = inputs.getMessage();
         try {
-            eegRow = new EEGRow(message);
-            updateFields(eegRow);
+            eegReading = new EEGReading(message);
+            updateFields(eegReading);
         }
         catch (IndexOutOfBoundsException exception){
             System.out.println("received incomplete EEG reading.");
@@ -80,16 +80,16 @@ public class Visualizer implements Observer {
         }
     }
 
-    private synchronized void updateFields(EEGRow input) {
-        delta.updateChart(input.getReadingAt(4));
-        theta.updateChart(input.getReadingAt(5));
-        lowAlpha.updateChart(input.getReadingAt(6));
-        highAlpha.updateChart(input.getReadingAt(7));
-        lowBeta.updateChart(input.getReadingAt(8));
-        highBeta.updateChart(input.getReadingAt(9));
-        lowGamma.updateChart(input.getReadingAt(10));
-        highGamma.updateChart(input.getReadingAt(11));
-        neuroSky.updateFields(input.getSignalStrength(), input.getReadingAt(2), input.getReadingAt(3));
+    private synchronized void updateFields(EEGReading input) {
+        delta.updateChart(input.getDelta());
+        theta.updateChart(input.getTheta());
+        lowAlpha.updateChart(input.getLowAlpha());
+        highAlpha.updateChart(input.getHighAlpha());
+        lowBeta.updateChart(input.getlowBeta());
+        highBeta.updateChart(input.getHighBeta());
+        lowGamma.updateChart(input.getLowGamma());
+        highGamma.updateChart(input.getHighGamma());
+        neuroSky.updateFields(input.getSignalStrength(), input.getAttention(), input.getMeditation());
     }
 
 }

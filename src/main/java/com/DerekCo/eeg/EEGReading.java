@@ -1,5 +1,7 @@
 package com.DerekCo.eeg;
 
+import javax.persistence.*;
+
 /**
  * Created by Derek on 8/20/16.
  *
@@ -20,49 +22,103 @@ package com.DerekCo.eeg;
  * 10) low gamma (31-40Hz) multi-sensory procsessing
  * 11) high gamma (41-50Hz)
  */
+
+@Entity
+@Table(name="eeg_reading")
 public class EEGReading {
 
-    String[] values;
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="reading_id")
+    private long readingId;
+
+    @Column(name="session_id")
+    private long sessionId;
+
+    private String time_stamp;
+    private int signal;
+    private int attention;
+    private int meditation;
+    private int delta;
+    private int theta;
+
+    @Column(name="low_alpha")
+    private int lowAlpha;
+    @Column(name="high_alpha")
+    private int highAlpha;
+
+    @Column(name="low_beta")
+    private int lowBeta;
+    @Column(name="high_beta")
+    private int highBeta;
+
+    @Column(name="low_gamma")
+    private int lowGamma;
+    @Column(name="high_gamma")
+    private int highGamma;
 
     public EEGReading(String row) {
-        values = row.split(",");
+        String[] values = row.split(",");
+        setTimeStamp(values[0]);
+        setSignalStrength(Integer.parseInt(values[1]));
+        setAttention(Integer.parseInt(values[2]));
+        setMeditation(Integer.parseInt(values[3]));
+        setDelta(Integer.parseInt(values[4]));
+        setTheta(Integer.parseInt(values[5]));
+        setLowAlpha(Integer.parseInt(values[6]));
+        setHighAlpha(Integer.parseInt(values[7]));
+        setLowBeta(Integer.parseInt(values[8]));
+        setHighBeta(Integer.parseInt(values[9]));
+        setLowGamma(Integer.parseInt(values[10]));
+        setHighGamme(Integer.parseInt(values[11]));
     }
 
-    String getTimeStamp() {
-        return values[0];
+    public String getTimeStamp() {
+        return time_stamp;
     }
+    public void setTimeStamp(String value) { time_stamp = value;}
 
-    int getSignalStrength(){
-        return Integer.parseInt(values[1]);
+    public int getSignalStrength(){
+        return signal;
     }
+    public void setSignalStrength(int value) {signal = value;}
 
-    int getAttention() { return Integer.parseInt(values[2]);}
+    public int getAttention() { return attention;}
+    public void setAttention(int val) {attention = val;}
 
-    int getMeditation() {return Integer.parseInt(values[3]);}
+    public int getMeditation() {return meditation;}
+    public void setMeditation(int val) {meditation = val;}
 
-    int getDelta() {return Integer.parseInt(values[4]);}
+    public int getDelta() {return delta;}
+    public void setDelta(int val) { delta = val;}
 
-    int gettheta() {return Integer.parseInt(values[5]);}
+    public int getTheta() {return theta;}
+    public void setTheta(int val) { theta = val;}
 
-    int getLowAlpha() {return Integer.parseInt(values[6]);}
+    public int getLowAlpha() {return lowAlpha;}
+    public void setLowAlpha(int val) { lowAlpha = val;}
 
-    int getHighAlpha() {return Integer.parseInt(values[7]);}
+    public int getHighAlpha() {return highAlpha;}
+    public void setHighAlpha(int val) { highAlpha = val;}
 
-    int getlowBeta() {return Integer.parseInt(values[8]);}
+    public int getlowBeta() {return lowBeta;}
+    public void setLowBeta(int val) { lowBeta = val;}
 
-    int getHighBeta() {return Integer.parseInt(values[9]);}
+    public int getHighBeta() {return highBeta;}
+    public void setHighBeta(int val) { highBeta = val;}
 
-    int getlowGamma() {return Integer.parseInt(values[10]);}
+    public int getLowGamma() {return lowGamma;}
+    public void setLowGamma(int val) { lowGamma = val;}
 
-    int getHighGamma() {return Integer.parseInt(values[11]);}
+    public int getHighGamma() {return highGamma;}
+    public void setHighGamme(int val) { highGamma = val;}
 
-    int getReadingAt(int index) {
-        if (index > 1 && index < 12) {
-            return Integer.parseInt(values[index]);
-        } else throw new IllegalArgumentException("The index range is 2-11");
+    public long getSessionId() { return sessionId;}
+
+    public void setSessionId(int id) {
+        sessionId = id;
     }
-
-
 
 
     // signal_strentgh can be 0-200. The lower the value, the higher the strength. Counterintuitive,

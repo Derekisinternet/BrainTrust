@@ -9,18 +9,23 @@ import java.util.*;
  *
  */
 @Entity
-@Table
+@Table(name="sessions")
 public class Session implements Observer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="session_id")
-    private int sessionId;
+    private long sessionId;
 
+    @Transient
     private List<String> records;
+    @Transient
     private int lastArchivedRecord;
+    @Transient
     private boolean archiveOutOfDate;
+    @Transient
     private String sessionName;
+    @Transient
     private EEGInputHandler input;
 
     public Session() {
