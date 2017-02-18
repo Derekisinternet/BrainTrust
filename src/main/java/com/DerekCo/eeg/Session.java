@@ -1,14 +1,22 @@
 package com.DerekCo.eeg;
 
+import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * Created by Mastermind on 8/22/16.
- * collects the raw data of a session for things like archiving or
- * Stats analysis.
+ * A collection of EEG Rows
+ *
  */
+@Entity
+@Table
 public class Session implements Observer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="session_id")
+    private int sessionId;
+
     private List<String> records;
     private int lastArchivedRecord;
     private boolean archiveOutOfDate;
@@ -19,7 +27,6 @@ public class Session implements Observer {
         records = new ArrayList<String>();
         archiveOutOfDate = true;
         // the session name is the time at the session start. Seems reasonable.
-        // DON'T JUDGE ME FOR MY COMMENTS
         sessionName = new SimpleDateFormat("yyyy_MM_dd_HH.mm.ss").format(new Date());
     }
 
@@ -39,11 +46,16 @@ public class Session implements Observer {
         //System.out.println("Session Archived!");
     }
 
-    public int getRecordLength() {
+    public int getSessionLength() {
         return records.size();
     }
 
     public String getName() {
         return sessionName;
     }
+
+    void persist(){
+
+    }
+
 }

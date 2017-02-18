@@ -20,12 +20,11 @@ package com.DerekCo.eeg;
  * 10) low gamma (31-40Hz) multi-sensory procsessing
  * 11) high gamma (41-50Hz)
  */
-public class EEGRow {
+public class EEGReading {
 
     String[] values;
 
-
-    public EEGRow(String row) {
+    public EEGReading(String row) {
         values = row.split(",");
     }
 

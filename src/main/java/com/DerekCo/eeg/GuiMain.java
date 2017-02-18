@@ -118,8 +118,7 @@ public class GuiMain {
 
     private class ExitListener extends WindowAdapter {
         public void windowClosing(WindowEvent event) {
-//            System.out.println(session.getRecordLength());
-            if (session.getRecordLength() > 0) {
+            if (session.getSessionLength() > 0) {
                 String ObjButtons[] = {"Yes", "No", "Cancel"};
                 int promptResult = JOptionPane.showOptionDialog(null,
                         "Do You Want to Archive Your Session Before Exiting?", "See You Space Cowboy . . .",
