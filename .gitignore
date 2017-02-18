@@ -3,3 +3,4 @@ EEG_Readings/*
 .DS_Store
 Session_Notes/*
 target/*
+*/persistence.xml
