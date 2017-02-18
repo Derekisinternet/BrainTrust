@@ -32,4 +32,5 @@ public class SessionStatsTest {
         // 4 = delta waves
         assertEquals(621970, stats.getAverageValue(4));
     }
+
 }

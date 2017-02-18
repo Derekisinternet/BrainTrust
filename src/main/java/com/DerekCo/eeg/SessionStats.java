@@ -37,4 +37,15 @@ public class SessionStats {
         }
         return total / numRows;
     }
+
+    public int getHighestValue(int index) {
+        int highest = 0;
+        for (EEGRow row : rawData) {
+            int value = row.getReadingAt(index);
+            if (value > highest) {
+                highest = value;
+            }
+        }
+        return highest;
+    }
 }
