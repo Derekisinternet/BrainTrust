@@ -3,13 +3,14 @@ package com.DerekCo.eeg;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
+import java.util.HashMap;
 
 /**
  * Created by Mastermind on 2/18/17.
  */
 public class EntityManagerFactorySingleton {
     private static final EntityManagerFactorySingleton singleton = new EntityManagerFactorySingleton();
-    private EntityManagerFactory emf;
+    private HashMap<String, EntityManagerFactory> ledger;
 
     // empty constructor so external users can't instantiate.
     private EntityManagerFactorySingleton(){
@@ -20,24 +21,30 @@ public class EntityManagerFactorySingleton {
         return singleton;
     }
 
-    // returns the EntityManagerFactory object:
-    public EntityManagerFactory getEmf(){
-        if (emf == null) {
+    // returns the EntityManagerFactory object from ledger. Builds if null:
+    public EntityManagerFactory getEmf(String key) throws Exception{
+        if (key == null) {
+            throw new IllegalArgumentException("Parameter value cannot be null");
+        }
+        if (this.ledger.get(key) == null) {
             try {
-                emf = Persistence.createEntityManagerFactory("manager1");
+                EntityManagerFactory emf = Persistence.createEntityManagerFactory(key);
+                ledger.put(key, emf);
             }
             catch (PersistenceException exception) {
                 System.out.println("Error creating EntityManagerFactory: ");
                 exception.printStackTrace();
             }
         }
-        return emf;
+        return ledger.get(key);
     }
 
-    public void closeEmf() {
-        if (emf.isOpen() || emf != null) {
-            emf.close();
+    public void close() {
+        for (EntityManagerFactory emf : ledger.values()) {
+            if (emf.isOpen()) {
+                emf.close();
+            }
+            emf = null;
         }
-        emf = null;
     }
 }

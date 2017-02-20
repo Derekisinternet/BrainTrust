@@ -2,6 +2,7 @@ package com.DerekCo.eeg;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.persistence.EntityManagerFactory;
 import javax.swing.*;
 
 /**
@@ -138,6 +139,7 @@ public class GuiMain {
                     }
                 }
             }
+            EntityManagerFactorySingleton.getInstance().close();
             System.exit(0);
         }
     }

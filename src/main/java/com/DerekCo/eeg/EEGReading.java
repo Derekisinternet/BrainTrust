@@ -58,6 +58,8 @@ public class EEGReading {
     @Column(name="high_gamma")
     private int highGamma;
 
+    public EEGReading() {}
+
     public EEGReading(String row) {
         String[] values = row.split(",");
         setTimeStamp(values[0]);
@@ -115,10 +117,11 @@ public class EEGReading {
     public void setHighGamme(int val) { highGamma = val;}
 
     public long getSessionId() { return sessionId;}
-
     public void setSessionId(int id) {
         sessionId = id;
     }
+
+    public long getReadingId() {return readingId;}
 
 
     // signal_strentgh can be 0-200. The lower the value, the higher the strength. Counterintuitive,

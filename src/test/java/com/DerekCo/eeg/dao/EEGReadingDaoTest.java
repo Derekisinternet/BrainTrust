@@ -4,6 +4,7 @@ import com.DerekCo.eeg.EEGReading;
 import com.DerekCo.eeg.JPAHibernateTest;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import javax.security.auth.login.Configuration;
 
@@ -16,13 +17,24 @@ public class EEGReadingDaoTest extends JPAHibernateTest{
 
 
     @Test
-    public void testPersistAndRetrieve() {
+    public void testPersist() {
+        EEGReadingDao dao = new EEGReadingDao(emf);
+        dao.persist(row);
+
+        assertNotNull(dao.findById(row.getReadingId()));
+    }
+
+    @Test
+    public void testRetrieve() {
         row.setSessionId(123);
         em.getTransaction().begin();
         em.persist(row);
         em.getTransaction().commit();
 
-        assertEquals(3233, row.getHighGamma());
+        EEGReadingDao dao = new EEGReadingDao(emf);
+        EEGReading retrieved = dao.findById(row.getReadingId());
+
+        assertEquals(row.getHighGamma(), retrieved.getHighGamma());
     }
 
 }

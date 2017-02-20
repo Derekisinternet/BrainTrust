@@ -1,4 +1,4 @@
-CREATE TABLE eeg_reading (
+CREATE TABLE if not exists eeg_reading (
   reading_id bigint auto_increment primary key,
   session_id bigint,
   time_stamp varchar(255),
@@ -18,7 +18,7 @@ CREATE TABLE eeg_reading (
 
 create sequence if not exists eeg_reading_seq;
 
-CREATE TABLE sessions (
+CREATE TABLE if not exists sessions (
   session_id bigint auto_increment primary key,
   PRIMARY KEY (session_id)
 );
