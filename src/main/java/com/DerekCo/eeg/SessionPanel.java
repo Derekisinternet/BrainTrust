@@ -14,7 +14,7 @@ public class SessionPanel implements Observer{
     private JPanel panel;
     private SessionNotesPanel notesPanel;
     private EEGInputHandler inputs;
-    private EEGRow eegRow;
+    private EEGReading eegRow;
 
     public SessionPanel(String name, SessionNotes notes) {
 
@@ -33,7 +33,7 @@ public class SessionPanel implements Observer{
         inputs = (EEGInputHandler) observable;
         String message = inputs.getMessage();
         try {
-            eegRow = new EEGRow(message);
+            eegRow = new EEGReading(message);
             updateFields(eegRow);
         }
         catch (IndexOutOfBoundsException exception){
@@ -48,7 +48,7 @@ public class SessionPanel implements Observer{
         return panel;
     }
 
-    private synchronized void updateFields(EEGRow input) {
+    private synchronized void updateFields(EEGReading input) {
 
     }
 

@@ -1,1 +1,5 @@
-/Users/Mastermind/Java_Bullshit/EEG_Bullshit/BrainTrust/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java
+/Users/Mastermind/Java_Bullshit/BrainTrust/src/test/java/com/DerekCo/eeg/EEGInputHandlerTest.java
+/Users/Mastermind/Java_Bullshit/BrainTrust/src/test/java/com/DerekCo/eeg/dao/EEGReadingDaoTest.java
+/Users/Mastermind/Java_Bullshit/BrainTrust/src/test/java/com/DerekCo/eeg/SessionStatsTest.java
+/Users/Mastermind/Java_Bullshit/BrainTrust/src/test/java/com/DerekCo/eeg/JPAHibernateTest.java
+/Users/Mastermind/Java_Bullshit/BrainTrust/src/test/java/com/DerekCo/eeg/EEGRowTest.java

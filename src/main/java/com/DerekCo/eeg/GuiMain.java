@@ -2,6 +2,7 @@ package com.DerekCo.eeg;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.persistence.EntityManagerFactory;
 import javax.swing.*;
 
 /**
@@ -118,8 +119,7 @@ public class GuiMain {
 
     private class ExitListener extends WindowAdapter {
         public void windowClosing(WindowEvent event) {
-//            System.out.println(session.getRecordLength());
-            if (session.getRecordLength() > 0) {
+            if (session.getSessionLength() > 0) {
                 String ObjButtons[] = {"Yes", "No", "Cancel"};
                 int promptResult = JOptionPane.showOptionDialog(null,
                         "Do You Want to Archive Your Session Before Exiting?", "See You Space Cowboy . . .",
@@ -139,6 +139,7 @@ public class GuiMain {
                     }
                 }
             }
+            EntityManagerFactorySingleton.getInstance().close();
             System.exit(0);
         }
     }
